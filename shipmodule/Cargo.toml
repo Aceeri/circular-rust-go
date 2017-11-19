@@ -1,0 +1,25 @@
+[package]
+name = "shipmodule"
+version = "0.1.0"
+authors = ["Aceeri <conmcclusk@gmail.com>"]
+build = "build.rs"
+
+[lib]
+name = "shipmodule"
+path = "src/lib.rs"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[dependencies]
+libc = "0.2.33"
+
+[profile.dev]
+lto = true
+
+[features]
+link = []
+
+[build]
+rustflags = ["-L", "gobuild"]
